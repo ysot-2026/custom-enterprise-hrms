@@ -22,7 +22,7 @@ export default function EmployeeDirectory() {
   const [viewEmployee, setViewEmployee] = useState<Employee | null>(null);
   const perPage = 50;
 
-  const [formData, setFormData] = useState({ name: '', email: '', department: 'Engineering', jobTitle: '', type: 'Employee' as const, grossPay: 0 });
+  const [formData, setFormData] = useState<{ name: string; email: string; department: string; jobTitle: string; type: 'Employee' | 'Consultant'; grossPay: number }>({ name: '', email: '', department: 'Engineering', jobTitle: '', type: 'Employee', grossPay: 0 });
 
   const filtered = useMemo(() => {
     return localEmployees.filter(e => {
